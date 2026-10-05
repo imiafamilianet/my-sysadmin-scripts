@@ -4,6 +4,12 @@ LOG_FILE="/var/log/user_setup.log"
 USERNAME=$1
 USER_DIR="/home/$USERNAME"
 
+if [ -z "$USERNAME" ]; then
+    echo "Ошибка: Не указано имя пользователя!"
+    echo "Использование: $0 <имя_пользователя>"
+    exit 1
+fi
+
 echo "Создание директории: $USER_DIR"
 sudo mkdir -p "$USER_DIR"
 
