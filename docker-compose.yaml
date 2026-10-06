@@ -1,0 +1,13 @@
+services:
+  script_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: script_server
+    stdin_open: true
+    tty: true
+    restart: "no"
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
